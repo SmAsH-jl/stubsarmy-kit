@@ -57,13 +57,13 @@ docker run -d \
   --name ergo \
   --restart unless-stopped \
   -v ergo-data:/ircd \
-  -p 6667:6667 \
+  -p 16667:16667 \
   -p 6697:6697 \
   ghcr.io/ergochat/ergo:stable
 ```
 
 Ports:
-- `6667` — plain text IRC (required)
+- `16667` — plain text IRC (required)
 - `6697` — TLS IRC (optional, recommended for external connections)
 
 ---
@@ -77,17 +77,17 @@ docker logs ergo --tail 20
 You should see something like:
 ```
 Ergo v2.x.x starting
-Listening on :6667 (plaintext)
+Listening on :16667 (plaintext)
 Listening on :6697 (tls)
 ```
 
 Quick connection test:
 ```bash
 # Linux/macOS
-echo -e "NICK test\r\nUSER test 0 * :test\r\nQUIT\r\n" | nc localhost 6667
+echo -e "NICK test\r\nUSER test 0 * :test\r\nQUIT\r\n" | nc localhost 16667
 
 # Windows PowerShell
-$tcp = New-Object System.Net.Sockets.TcpClient("localhost", 6667)
+$tcp = New-Object System.Net.Sockets.TcpClient("localhost", 16667)
 ```
 
 ---
@@ -132,7 +132,7 @@ docker restart ergo
 
 You need an IRC operator account to manage the server.
 
-Connect with any IRC client to `localhost:6667`, then:
+Connect with any IRC client to `localhost:16667`, then:
 
 ```irc
 /nick YourNick
@@ -160,7 +160,7 @@ In your runtime directory, create or update `config.json`:
 {
   "external_irc": {
     "host": "localhost",
-    "port": 6667,
+    "port": 16667,
     "tls": false,
     "verify_tls": false,
     "sasl_enabled": true,
@@ -177,7 +177,7 @@ In your runtime directory, create or update `config.json`:
 }
 ```
 
-For remote access (connecting from another machine), replace `localhost` with your server's IP or hostname and ensure port 6667 is open in your firewall.
+For remote access (connecting from another machine), replace `localhost` with your server's IP or hostname and ensure port 16667 is open in your firewall.
 
 ---
 
@@ -185,7 +185,7 @@ For remote access (connecting from another machine), replace `localhost` with yo
 
 Same as StubsHQ — each bot nick needs a NickServ account before the runtime can auth via SASL.
 
-Connect with an IRC client to `localhost:6667`, then for each agent nick:
+Connect with an IRC client to `localhost:16667`, then for each agent nick:
 
 ```irc
 /nick [AGENT_NAME]
@@ -209,7 +209,7 @@ Connect with an IRC client to `localhost:6667`, then for each agent nick:
 
 If you want to connect from outside your local network:
 
-1. **Open firewall port 6667** (and 6697 for TLS) on your router/firewall
+1. **Open firewall port 16667** (and 6697 for TLS) on your router/firewall
 2. **Get your external IP** or set up a dynamic DNS name (e.g. DuckDNS — same service StubsHQ uses)
 3. Update `config.json` with your external hostname instead of `localhost`
 

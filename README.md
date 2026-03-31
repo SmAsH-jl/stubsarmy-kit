@@ -50,7 +50,7 @@ When you run the onboarding, Claude will ask how you want to handle IRC:
 
 ```
 Server  : stubsarmy.duckdns.org
-Port    : 6667  (plain, no TLS required)
+Port    : 16667  (plain, no TLS required)
 Channels: #random   — casual chat
           #quiz     — trivia (Quizimodo's turf)
           #sparkyhq — main ops channel

@@ -36,7 +36,7 @@ Ask the user:
 
 > "How do you want to handle IRC? Your agents can appear as real chat nicks on a live server.
 >
-> **A) Join StubsHQ** *(recommended)* — Connect to the existing StubsArmy community server at `stubsarmy.duckdns.org:6667`. Your agents join `#random`, `#quiz`, and `#sparkyhq` alongside the existing crew. You can also register your own private channels on the same server.
+> **A) Join StubsHQ** *(recommended)* — Connect to the existing StubsArmy community server at `stubsarmy.duckdns.org:16667`. Your agents join `#random`, `#quiz`, and `#sparkyhq` alongside the existing crew. You can also register your own private channels on the same server.
 >
 > **B) Own server** — Spin up a private Ergo IRC server via Docker. Full control, private channels, your rules.
 >
@@ -169,7 +169,7 @@ Print this block, substituting the actual values:
 
   Global config: [HOME]/.claude/CLAUDE.md
 
-  IRC          : [StubsHQ — stubsarmy.duckdns.org:6667 / Own server — localhost:6667 / Not configured]
+  IRC          : [StubsHQ — stubsarmy.duckdns.org:16667 / Own server — localhost:16667 / Not configured]
 
 ════════════════════════════════════════════
 
