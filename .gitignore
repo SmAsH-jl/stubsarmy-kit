@@ -1,0 +1,17 @@
+# Secrets — never commit these
+.env
+config.json
+*.key
+*.pem
+*.crt
+
+# Runtime artifacts
+*.pid
+*.log
+__pycache__/
+*.pyc
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
